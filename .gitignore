@@ -1,0 +1,9 @@
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore API keys file
+WeatherPy/api_keys.py
+
+
+
