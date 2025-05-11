@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo "🚀 Setting up VS Code 'code' command..."
+# Add VS Code to PATH in .zshrc (permanently)
+if ! grep -q "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ~/.zshrc; then
+    echo 'export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"' >> ~/.zshrc
+    source ~/.zshrc
+    echo "✅ VS Code command set up successfully!"
+else
+    echo "✅ VS Code command already set up."
+fi
+
+echo "🚀 Creating and securing your .env file..."
+# Create the .env file if it doesn't exist
+if [ ! -f .env ]; then
+    touch .env
+    echo "WEATHER_API_KEY=your_api_key_here" >> .env
+    echo "✅ .env file created."
+else
+    echo "✅ .env file already exists."
+fi
+
+# Ensure .env is in .gitignore
+if ! grep -q ".env" .gitignore; then
+    echo ".env" >> .gitignore
+    echo "✅ .env file added to .gitignore."
+else
+    echo "✅ .env already in .gitignore."
+fi
+
+echo "✅ Setup complete! Make sure to replace 'your_api_key_here' in .env with your actual API key."
+chmod +x setup_env.sh
+./setup_env.sh
+code .env
+WEATHER_API_KEY=645ba0cfeff44c04461d5902e7d0e21fs
+"645ba0cfeff44c04461d5902e7d0e21f"
+./setup_env.sh
+code .env
+WEATHER_API_KEY=645ba0cfeff44c04461d5902e7d0e21fs
