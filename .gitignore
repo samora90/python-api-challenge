@@ -2,8 +2,17 @@
 # Ignore Mac system files
 .DS_Store
 
-# Ignore API keys file
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+
+# Ignore API keys file (Sensitive Information)
 WeatherPy/api_keys.py
+.env
 
+# Ignore Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
 
+# Ignore the python-api-challenge directory
+python-api-challenge/
 
